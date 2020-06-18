@@ -60,11 +60,43 @@
     // Tuliskan Code kamu di sini
     var name = document.getElementById("name").value
     var role = document.getElementById("role").value
+    var hasil;
+    function kondisi(a, b) {
+      sam = "Selamat datang di Dunia Werewolf," + a + "<br>";
+      card1 = "Halo Penyihir " + a + ", kamu dapat melihat siapa yang menjadi Werewolf!";
+      card2 = "Halo Werewolf " + a + ", kamu dapat memilih siapa untuk dimakan malam ini!";
+      card3 = "rajel " + a + ", Kamu menjadi rakyat jelata";
+      els = "peran tidak valid peran hanya Penyihir, Werewolf, dan rajel";
+      if (!a == "") {
+        if (b == "") {
+          var sam = 'hallo' + a + 'pilih peranmu ';
+          hasil = sam;
+        } else {
+          switch (b) {
+            case "penyihir":
+              hasil = sam + card1;
+              break;
+            case "Werewolf":
+              hasil = sam + card2;
+              break;
+            case "rajel":
+              hasil = sam + card3;
+              break;
+            default:
+              hasil = sam + els;
+              break;
+          }
+        }
+      } else {
+        sam1 = "Nama harus diisi!";
+        hasil = sam1;
+      }
+    }
     // buatlah kondisional berdasarkan dua variabel di atas yaitu name dan role, ketentuannya dapat dibaca di atas
 
+    kondisi(name, role);
 
-
-    var jawabanKonsol // = jawaban dari kondisional di-assign di sini
+    var jawabanKonsol = hasil;// = jawaban dari kondisional di-assign di sini
     // Code Sampai sini
 
     jawaban.innerHTML = jawabanKonsol
